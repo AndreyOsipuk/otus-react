@@ -8,17 +8,6 @@
     "dev": "webpack-dev-server  --mode development --open",
     "build": "rimraf ./dist && webpack --mode production"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.(js|jsx)": [
-      "npm run lint:write",
-      "git add"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
