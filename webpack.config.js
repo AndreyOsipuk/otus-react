@@ -9,7 +9,7 @@ module.exports = {
         filename: "index.[chunkhash].js",
     },
     resolve: {
-        extensions: ['.tsx','.jsx', '.js'],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
         alias: {
             assets: path.resolve(__dirname, 'src', 'assets'),
             components: path.resolve(__dirname, 'src', 'components'),
