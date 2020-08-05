@@ -10,10 +10,7 @@ export const parser = (line: string): ParsedLineType | null => {
     const prevItem = stack[key - 1];
 
     const isValidNumberPush = !isNumber(prevItem) && isNumber(item);
-    const isValidOperatorPush =
-      // isNumber(prevItem) &&
-      // !isNumber(item) &&
-      mathOperators.hasOwnProperty(item);
+    const isValidOperatorPush = mathOperators.hasOwnProperty(item);
 
     if (isValidNumberPush) {
       result.push(Number(item));

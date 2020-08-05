@@ -44,14 +44,6 @@ describe("secondPrioritiesCalc mixed with third priorities cases", () => {
   });
 });
 
-// describe("thirdPrioritiesCalc invalid cases", () => {
-//   it("[32, / 32]", () => {
-//     expect(() => thirdPrioritiesCalc([32, "/", 32])).toThrow(
-//       TypeError("Unexpected stack!")
-//     );
-//   });
-// });
-
 describe("thirdPrioritiesCalc simple cases", () => {
   it("[32, + 32]", () => {
     expect(thirdPrioritiesCalc([32, "+", 32])).toEqual(64);

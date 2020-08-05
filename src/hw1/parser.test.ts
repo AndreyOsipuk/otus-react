@@ -13,15 +13,3 @@ describe("Parser correct cases", () => {
     expect(parser("1 + 32 - 2 + 2")).toEqual([1, "+", 32, "-", 2, "+", 2]);
   });
 });
-
-// describe("Parser invalid cases", () => {
-//   it("1 + + 33 - 2", () => {
-//     expect(() => parser("1 + + 33 - 2")).toThrow(
-//       TypeError("Unexpected string")
-//     );
-//   });
-
-//   it("1 ! 33 - 2", () => {
-//     expect(() => parser("1 ! 33 - 2")).toThrow(TypeError("Unexpected string"));
-//   });
-// });

@@ -3,31 +3,31 @@ export type ScalarOperationType = (first: number, second?: number) => number;
 export const mul: ScalarOperationType = (
   first: number,
   second?: number
-): number => first * (second || 0);
+) => first * (second || 0);
 
 export const div: ScalarOperationType = (
   first: number,
   second?: number
-): number => first / (second || 1);
+) => first / (second || 1);
 
 export const add: ScalarOperationType = (
   first: number,
   second?: number
-): number => first + (second || 0);
+) => first + (second || 0);
 
 export const minus: ScalarOperationType = (
   first: number,
   second?: number
-): number => first - (second || 0);
+) => first - (second || 0);
 
 export const square: ScalarOperationType = (
   first: number
-): number => Math.pow(first, 2);
+) => Math.pow(first, 2);
 
 export const degree: ScalarOperationType = (
   first: number,
   second?: number
-): number => Math.pow(first, (second || 0));
+) => Math.pow(first, (second || 0));
 
 export const mathOperators: { [key: string]: ScalarOperationType } = {
   "*": mul,
