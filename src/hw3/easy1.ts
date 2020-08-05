@@ -4,16 +4,17 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const allDogNames = {
-    django: 'django',
-    tom: 'tom',
-    buster: 'buster',
-  } as const;
-  
-  // type -> "django" | "tom" | "buster"
-  type AllDogNames = (typeof allDogNames)[keyof typeof allDogNames]; 
+  django: "django",
+  tom: "tom",
+  buster: "buster",
+} as const;
 
+// type -> "django" | "tom" | "buster"
+type AllDogNames = typeof allDogNames[keyof typeof allDogNames];
 
-type FIXME = Array<"initial" | "inWork" | "buyingSupplies"| "producing"| "fullfilled">;
+type FIXME = Array<
+  "initial" | "inWork" | "buyingSupplies" | "producing" | "fullfilled"
+>;
 
 const orderStates = [
   "initial",
