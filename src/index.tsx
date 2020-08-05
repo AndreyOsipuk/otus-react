@@ -10,7 +10,13 @@ const field: string[][] = [
 
 const onClick = (x: number, y: number) => {
   field[y].splice(x, 1);
-  ReactDom.render(<Field field={field} onClick={onClick} />, document.getElementById("root"));
-}
+  ReactDom.render(
+    <Field field={field} onClick={onClick} />,
+    document.getElementById("root")
+  );
+};
 
-ReactDom.render(<Field field={field} onClick={onClick} />, document.getElementById("root"));
+ReactDom.render(
+  <Field field={field} onClick={onClick} />,
+  document.getElementById("root")
+);

@@ -13,10 +13,7 @@ export const Cell: FC<CellProps> = ({ children, x, y, onClick }) => {
   const isFilled = Boolean(children);
 
   return (
-    <CellItem
-      isFilled={isFilled}
-      onClick={() => onClick(x || 0, y || 0)}
-    >
+    <CellItem isFilled={isFilled} onClick={() => onClick(x || 0, y || 0)}>
       {children}
     </CellItem>
   );
