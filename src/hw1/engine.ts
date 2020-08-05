@@ -12,35 +12,32 @@ export const zeroPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
   stack.reduce<ParsedLineType>((result, nextItem) => {
     const item = result[result.length - 1];
     if (nextItem === "**") {
-      result = [
-        ...result.slice(0, -1),
-        mathOperators["**"](Number(item))
-      ];
+      result = [...result.slice(0, -1), mathOperators["**"](Number(item))];
     } else {
       result.push(nextItem);
     }
-    console.log('result0',result)
+    console.log("result0", result);
     return result;
   }, []);
 
 export const firstPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
-stack.reduce<ParsedLineType>((result, nextItem) => {
-  const prevItem = result[result.length - 2];
-  const item = result[result.length - 1];
-  if (!isNumber(String(item)) && mathOperatorsPriorities[item] === FIRST) {
-    if (!mathOperators[item]) {
-      throw new TypeError("Unexpected stack!");
+  stack.reduce<ParsedLineType>((result, nextItem) => {
+    const prevItem = result[result.length - 2];
+    const item = result[result.length - 1];
+    if (!isNumber(String(item)) && mathOperatorsPriorities[item] === FIRST) {
+      if (!mathOperators[item]) {
+        throw new TypeError("Unexpected stack!");
+      }
+      result = [
+        ...result.slice(0, -2),
+        mathOperators[item](Number(prevItem), Number(nextItem)),
+      ];
+    } else {
+      result.push(nextItem);
     }
-    result = [
-      ...result.slice(0, -2),
-      mathOperators[item](Number(prevItem), Number(nextItem)),
-    ];
-  } else {
-    result.push(nextItem);
-  }
-  
-  return result;
-}, []);
+
+    return result;
+  }, []);
 
 export const secondPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
   stack.reduce<ParsedLineType>((result, nextItem) => {
@@ -57,7 +54,7 @@ export const secondPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
     } else {
       result.push(nextItem);
     }
-    
+
     return result;
   }, []);
 
