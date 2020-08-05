@@ -1,17 +1,23 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 //css
 import { CellItem } from "./CellItems";
 
 export interface CellProps {
   children?: string;
+  onClick: (x: number, y: number) => void;
+  x?: number;
+  y?: number;
 }
 
-export const Cell: FC<CellProps> = ({ children }) => {
-  const [isFilled, setisFilled] = useState<boolean>(false);
+export const Cell: FC<CellProps> = ({ children, x, y, onClick }) => {
+  const isFilled = Boolean(children);
 
   return (
-    <CellItem isFilled={isFilled} onClick={() => setisFilled(!isFilled)}>
-      {!isFilled && children}
+    <CellItem
+      isFilled={isFilled}
+      onClick={() => onClick(x || 0, y || 0)}
+    >
+      {children}
     </CellItem>
   );
 };
