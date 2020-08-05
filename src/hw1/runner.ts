@@ -1,6 +1,11 @@
 import { parser } from "./parser";
 
-import { zeroPrioritiesCalc, firstPrioritiesCalc, secondPrioritiesCalc, thirdPrioritiesCalc } from "./engine";
+import {
+  zeroPrioritiesCalc,
+  firstPrioritiesCalc,
+  secondPrioritiesCalc,
+  thirdPrioritiesCalc,
+} from "./engine";
 
 export const runner = (line: string): number => {
   const stack = parser(line);
